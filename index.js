@@ -1,4 +1,6 @@
-var finances = [
+// WORKINGS: Renamed array so that it is more descriptive of actual dataset (i.e. replaced ‘finances’ for ‘monthlyProfit’ as this is what the dataset contains).
+
+let monthlyProfit = [
   ['Jan-2010', 867884],
   ['Feb-2010', 984655],
   ['Mar-2010', 322013],
@@ -86,3 +88,9 @@ var finances = [
   ['Jan-2017', 138230],
   ['Feb-2017', 671099],
 ];
+
+//**TASK 1: Find total number of months included in the dataset.
+// WORKINGS: Used length property to find out how many elements are in the array (and since each element represents a month and profit/loss, this tells us the total number of months).
+let totalMonths = monthlyProfit.length
+// console.log(totalMonths);
+// Expected output 86 (CORRECT)

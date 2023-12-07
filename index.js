@@ -1,6 +1,5 @@
-// WORKINGS: Renamed array so that it is more descriptive of actual dataset (i.e. replaced ‘finances’ for ‘monthlyProfit’ as this is what the dataset contains).
-
-let monthlyProfit = [
+// WORKINGS: Renamed array so that it is more descriptive of actual dataset (i.e. replaced ‘finances’ for ‘monthlyProfit’ as this is what the dataset contains). Defined it with const so it can’t be overridden.
+const monthlyProfit = [
   ['Jan-2010', 867884],
   ['Feb-2010', 984655],
   ['Mar-2010', 322013],
@@ -94,3 +93,22 @@ let monthlyProfit = [
 let totalMonths = monthlyProfit.length
 // console.log(totalMonths);
 // Expected output 86 (CORRECT)
+
+//**TASK 2: Find net total amount of profit/losses over the entire period.
+//*TASK 2.1: We need the sum of the monthly profit/loss, but this array is 2D so we first need to work out the indexing pattern.
+// WORKINGS: First index should equal row (i.e. month and profit/loss) and second index should equal column (i.e. month or profit/loss).
+// console.log(monthlyProfit[0][1]);
+// Expected output 867884 (CORRECT)
+
+//*TASK 2.2: Now we need to add together each value in the second column (i.e. profit/loss). 
+// WORKINGS: Created a dynamic variable (i.e. totalProfit) that will keep count and set it to 0 (so it will start counting from the first loop).
+let totalProfit = 0
+
+// WORKINGS: Next used a forLoop to move through each row (i.e. month and profit/loss) and, as we enter the loop, we add the value in the second column (i.e. profit/loss) to our totalProfit variable (i.e. our counter). Set rowIndex to 0 so that the loop starts in the first row (because JavaScript is zero indexed). But kept column index as 1 because all of the profit/loss values are in the second column. Set the loop condition as ‘rowIndex less than the array length’ (so that the loop will continue until all of the rows have been looped through).
+for(let rowIndex = 0; rowIndex < monthlyProfit.length; rowIndex++) {
+  (totalProfit += monthlyProfit[rowIndex][1])
+}
+// console.log(totalProfit);
+// Expected output 38382578 (CORRECT)
+// CREDIT: Worked out Task 2 thanks to the help of Web Dev Cody (2020) BEGINNER Javascript Practice: Iteration & Arrays - How to Sum up the Numbers in a 2D Array (https://www.youtube.com/watch?v=apG8Kgonogc&list=PL6x5Q-Sj_BlYtuh3C-wA5mHAKeBw_0rDK&index=10).
+

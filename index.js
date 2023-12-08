@@ -189,3 +189,13 @@ let findMinMonth = (allMonthlyDifferences.indexOf(minDiff));
 let minMonth = monthlyProfit[findMinMonth+1][0];
 // console.log(minMonth)
 // Expected output Sep-2013 (CORRECT)
+
+//**TASK 6: Log analysis to console.
+// WORKINGS: Used template literals.
+console.log(`Financial Analysis
+----------------
+Total Months: ${totalMonths}
+Total: $${totalProfit}
+Average Change: $${averageMonthlyDifferenceTwo}
+Greatest Increase in Profits/Losses: ${maxMonth} ($${maxDiff})
+Greatest Decrease in Profits/Losses: ${minMonth} ($${minDiff})`)

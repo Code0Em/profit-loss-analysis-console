@@ -160,7 +160,7 @@ let maxDiff = (Math.max.apply(null, allMonthlyDifferences));
 // CREDIT: Discovered these methods from freeCodeCamp (2016) Three ways you can find the largest number in an array using JavaScript (https://www.freecodecamp.org/news/three-ways-to-return-largest-numbers-in-arrays-in-javascript-5d977baa80a1/).
 
 //*Task 4.2: Find which month returned greatest increase in profit/loss (i.e. 1926159)
-//*TASK 4.2.1: Identify index of maxDiff value in monthlyProfit array (i.e. where value of 1926159 is in the dataset)
+//*TASK 4.2.1: Identify index of maxDiff value in monthlyProfit array (i.e. where value of 1926159 is)
 // WORKINGS: Created variable called findMaxMonth and used indexOf() method to return the value’s index.
 let findMaxMonth = (allMonthlyDifferences.indexOf(maxDiff));
 // console.log(findMaxMonth)
@@ -168,6 +168,24 @@ let findMaxMonth = (allMonthlyDifferences.indexOf(maxDiff));
 
 //*TASK 4.2.2: Find which value (i.e. month) is located in the index (+1) identified at 4.2.1. 
 // WORKINGS: Created variable called maxMonth, and assigned this to return the value in the findMaxMonth index +1. Set row index to ‘findMaxMonth+1’ (+1 is required here because the forLoop in Task 3 started in row 1; so the allMonthlyDifferences array starts one row later than the monthlyProfit array). Set column index to 0 because all of the month values are in the first column of the monthlyProfit array.
-let maxMonth = monthlyProfit[findMaxMonth+1][0]
+let maxMonth = monthlyProfit[findMaxMonth+1][0];
 // console.log(maxMonth)
 // Expected output Feb-2012 (CORRECT)
+
+//**TASK 5:  Find greatest decrease in profit/losses (date and amount) over the entire period.
+//*Task 5.1: Identify the smallest value in allMonthlyDifferences array.
+// WORKINGS: All workings for Task 5 the same as Task 4.
+let minDiff = (Math.min.apply(null, allMonthlyDifferences));
+// console.log(minDiff)
+// Expected output -2196167 (CORRECT)
+
+//*Task 5.2: Find which month returned greatest decrease in profit/loss (i.e. -2196167)
+//*TASK 5.2.1: Identify index of minDiff value in monthlyProfit array (i.e. where value of -2196167 is)
+let findMinMonth = (allMonthlyDifferences.indexOf(minDiff));
+// console.log(findMinMonth)
+// Output 43 (this tells us that -2196167 is in row 43 of the monthlyProfit array)
+
+//*TASK 5.2.2: Find which value (i.e. month) is located in the index (+1) identified at 5.2.1.
+let minMonth = monthlyProfit[findMinMonth+1][0];
+// console.log(minMonth)
+// Expected output Sep-2013 (CORRECT)

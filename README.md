@@ -6,7 +6,7 @@ This project involved creating code to analyse the profit/loss records of a comp
 
 The project criteria also specified that the code should print the analysis to the Console (task 6) and present the findings similar to as follows: 
 
-![Screenshot of Console displaying a demonstration of the analysis](../profit-loss-analysis-console/images/findings-demo.jpg)
+![Screenshot of Console displaying a demonstration of the analysis](images/findings-demo.jpg)
 
 ## Build
 
@@ -26,7 +26,7 @@ Upon opening the Console, users can view the breakdown of the profit and loss an
 
 On Chrome browsers, with the Console opened to the bottom, the webpage will display as follows:
 
-![Screenshot of Console in Chrome Browser displaying the completed analysis](../profit-loss-analysis-console/images/profit-loss-analysis-console-screenshot.png)
+![Screenshot of Console in Chrome Browser displaying the completed analysis](images/profit-loss-analysis-console-screenshot.png)
 
 
 ## Credits

@@ -101,14 +101,26 @@ let totalMonths = monthlyProfit.length
 // Expected output 867884 (CORRECT)
 
 //*TASK 2.2: Now we need to add together each value in the second column (i.e. profit/loss). 
-// WORKINGS: Created a dynamic variable (i.e. totalProfit) that will keep count and set it to 0 (so it will start counting from the first loop).
+// WORKINGS: Used 'let' to create a dynamic variable (i.e. totalProfit) that will keep count and set it to 0 (so it will start counting from the first loop).
 let totalProfit = 0
 
-// WORKINGS: Next used a forLoop to move through each row (i.e. month and profit/loss) and, as we enter the loop, we add the value in the second column (i.e. profit/loss) to our totalProfit variable (i.e. our counter). Set rowIndex to 0 so that the loop starts in the first row (because JavaScript is zero indexed). But kept column index as 1 because all of the profit/loss values are in the second column. Set the loop condition as ‘rowIndex less than the array length’ (so that the loop will continue until all of the rows have been looped through).
+// WORKINGS: Next used a forLoop to move through each row (i.e. month and profit/loss). As we enter the loop, we add the value in the second column (i.e. profit/loss) to our totalProfit variable (i.e. our counter). Used += operator here because we’re adding the value in the second column (i.e. profit/loss) to the totalProfit variable and ‘assigning’ the sum to the totalProfit variable (i.e. totalProfit = totalProfit + profit/loss). Set our rowIndex to start at 0 so that the loop starts in the first row (because JavaScript is zero indexed). Kept the column index at 1 because all of the profit/loss values are in the second column. Set the loop condition as ‘rowIndex less than the array length’ (so that the loop will continue until all rows have been looped through). Used ++ operator in final expression of the loop so that the rowIndex will increase by 1, starting another iteration of the loop (until the loop condition is no longer met).
 for(let rowIndex = 0; rowIndex < monthlyProfit.length; rowIndex++) {
   (totalProfit += monthlyProfit[rowIndex][1])
 }
 // console.log(totalProfit);
 // Expected output 38382578 (CORRECT)
 // CREDIT: Worked out Task 2 thanks to the help of Web Dev Cody (2020) BEGINNER Javascript Practice: Iteration & Arrays - How to Sum up the Numbers in a 2D Array (https://www.youtube.com/watch?v=apG8Kgonogc&list=PL6x5Q-Sj_BlYtuh3C-wA5mHAKeBw_0rDK&index=10).
+
+//**TASK 3: Find the average of the changes in profit/losses over the entire period.
+//*TASK 3.1: Find all of the changes in profit/losses (i.e. the month-to-month difference).
+// WORKINGS: Used a forLoop to move through each row (i.e. month and profit/loss). As we enter the loop, we subtract the value in the column of the current row (i.e. that month’s profit/loss) (i.e. monthlyProfit[rowIndex][1]) from the value in the column of the preceding row (i.e. previous month’s profit/loss) (i.e. monthlyProfit[rowIndex-1][1]). Created a dynamic variable (i.e. monthlyDifference) and ‘assigned’ the results of the subtraction to this. Set our rowIndex to start at 1 so that the loop starts in the second row (because there is no previous month’s profit/loss to subtract from the first row; as these values are the first in the dataset). Kept column index, loop condition and final expression of the loop the same as in Task 2 (for the same reasons explained).
+//*TASK 3.2: ‘Store’ all of the changes in profit/losses somewhere (so we can then workout the sum and finally the average).
+// WORKINGS: Used push() method to 'push’ these values out into a new array called ‘allMonthlyDifferences’.
+let allMonthlyDifferences = []
+
+for(let rowIndex = 1; rowIndex < monthlyProfit.length; rowIndex++) {
+  let monthlyDifference = (monthlyProfit[rowIndex][1] - monthlyProfit[rowIndex-1][1]);
+  allMonthlyDifferences.push(monthlyDifference)
+}
 

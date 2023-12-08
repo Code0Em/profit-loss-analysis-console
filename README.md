@@ -20,7 +20,7 @@ N/A
 
 ## Usage
 
-Users navigate to the webpage via the URL ([Profit and Loss Analysis](ADD LINK WHEN DEPLOYED). When on the webpage, the browser displays a heading of “Open the Console to view the Profit and Loss Analysis”.
+Users navigate to the webpage via the URL ([Profit and Loss Analysis](https://code0em.github.io/profit-loss-analysis-console/)). When on the webpage, the browser displays a heading of “Open the Console to view the Profit and Loss Analysis”.
 
 Upon opening the Console, users can view the breakdown of the profit and loss analysis.
 

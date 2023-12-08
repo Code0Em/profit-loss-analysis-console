@@ -150,3 +150,24 @@ let averageMonthlyDifferenceTwo = averageMonthlyDifference.toFixed(2);
 // console.log(typeof averageMonthlyDifferenceTwo)
 // Expected output string (CORRECT)
 // CREDIT: Discovered toFixed() method thanks to W3Schools (no date) JavaScript toFixed() Method (https://www.w3schools.com/jsref/jsref_tofixed.asp).
+
+//**TASK 4:  Find greatest increase in profit/losses (date and amount) over the entire period.
+//*Task 4.1: Identify the largest value in allMonthlyDifferences array (i.e. list of all changes in profit/loss)
+// WORKINGS: Created variable called maxDiff and used Math.max() function to return the largest value in the allMonthlyDifferences array. However, because we can’t pass an array through this, also used apply() method. Set ‘this’ value as ‘null’ in apply() method because we aren’t using it.
+let maxDiff = (Math.max.apply(null, allMonthlyDifferences));
+// console.log(maxDiff)
+// Expected output 1926159 (CORRECT)
+// CREDIT: Discovered these methods from freeCodeCamp (2016) Three ways you can find the largest number in an array using JavaScript (https://www.freecodecamp.org/news/three-ways-to-return-largest-numbers-in-arrays-in-javascript-5d977baa80a1/).
+
+//*Task 4.2: Find which month returned greatest increase in profit/loss (i.e. 1926159)
+//*TASK 4.2.1: Identify index of maxDiff value in monthlyProfit array (i.e. where value of 1926159 is in the dataset)
+// WORKINGS: Created variable called findMaxMonth and used indexOf() method to return the value’s index.
+let findMaxMonth = (allMonthlyDifferences.indexOf(maxDiff));
+// console.log(findMaxMonth)
+// Output 24 (this tells us that 1926159 is in row 24 of the monthlyProfit array)
+
+//*TASK 4.2.2: Find which value (i.e. month) is located in the index (+1) identified at 4.2.1. 
+// WORKINGS: Created variable called maxMonth, and assigned this to return the value in the findMaxMonth index +1. Set row index to ‘findMaxMonth+1’ (+1 is required here because the forLoop in Task 3 started in row 1; so the allMonthlyDifferences array starts one row later than the monthlyProfit array). Set column index to 0 because all of the month values are in the first column of the monthlyProfit array.
+let maxMonth = monthlyProfit[findMaxMonth+1][0]
+// console.log(maxMonth)
+// Expected output Feb-2012 (CORRECT)
